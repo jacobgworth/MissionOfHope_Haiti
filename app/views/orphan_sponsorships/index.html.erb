@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Orphan Sponsorships</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Age</th>
+      <th>Sponsorship number</th>
+      <th>Bio</th>
+      <th>Image</th>
+      <th>Slug</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @orphan_sponsorships.each do |orphan_sponsorship| %>
+      <tr>
+        <td><%= orphan_sponsorship.first_name %></td>
+        <td><%= orphan_sponsorship.age %></td>
+        <td><%= orphan_sponsorship.sponsorship_number %></td>
+        <td><%= orphan_sponsorship.bio %></td>
+        <td><%= orphan_sponsorship.image %></td>
+        <td><%= orphan_sponsorship.slug %></td>
+        <td><%= link_to 'Show', orphan_sponsorship %></td>
+        <td><%= link_to 'Edit', edit_orphan_sponsorship_path(orphan_sponsorship) %></td>
+        <td><%= link_to 'Destroy', orphan_sponsorship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Orphan sponsorship', new_orphan_sponsorship_path %>

@@ -1,0 +1,181 @@
+<html>
+<head>
+	<style>
+.vohChild {
+    float: left;
+    width: 300px;
+    padding-right: 10px;
+    position: relative;
+    margin-bottom: 40px;
+    min-height: 258px;
+}
+</style>
+  <title>
+  	<% unless @title.nil? %><%=@title%><%else%>Mission of Hope Haiti<%end%>
+  </title>
+  <% if @meta.nil?%>
+  	<meta name="description" content="Welcome to Mission of Hope (MOH) Haiti, helping to bring hope to every man, woman and child in Haiti."/>
+  <%else%>
+  	<meta name="description" content="<%=@meta%>" />
+  <%end%>
+
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+ <%= stylesheet_link_tag "application" %>
+ <link rel="stylesheet" type="text/css" media="print" href="/assets/print.css">
+ <%= stylesheet_link_tag "gmaps4rails" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= yield :head %>
+  <%= auto_discovery_link_tag(:rss, "/posts.rss") %>
+<link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-20469817-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body>
+<div class="container">
+	<%= render 'layouts/nav' %>
+<%= yield %>
+
+<div><%= yield :scripts %></div>
+
+<div id="superFooter">
+	<div class="superFooterCol" style="width:200px;">
+		<a href="/"><img src="/assets/logoFooter.png" /></a>
+		
+	</div>
+	<div class="superFooterCol">
+		<div class="social">
+		<h5>We're Also On:</h5>
+		<ul style="width:120px;">
+			<li style="padding:0;" class="facebook"><a href="http://www.facebook.com/mohhaiti" target="_blank">Facebook</a></li>
+			<li style="padding:0;" class="twitter"><a href="http://twitter.com/mohhaiti" target="_blank">Twitter</a></li>
+			<li style="padding:0;" class="vimeo"><a href="http://vimeo.com/mohhaiti" target="_blank">Vimeo</a></li>
+			<li style="padding:0;"><a href="http://instagram.com/mohhaiti" target="_blank"><img src="/images/icon-instagram.png" alt="Instagram" /></a></li>
+		</ul>
+		</div>
+		<p class="clearfix"></p>
+		<img src="/assets/button-newsletter.png" alt="Subscribe to our newsletter" />
+		<div class="newsletterSignup">
+			
+		<form action="http://mohh.convio.net/site/Survey" method="POST" >
+			<input name="cons_email" class="newsletterinput" type="text"/>
+			<input type="hidden" name="cons_info_component" id="cons_info_component" value="t" />
+			<input type="hidden" name="pagewrap" value="n"/>
+			<input type="hidden" name="SURVEY_ID" id="SURVEY_ID" value="1162" />
+			<span style="display:none"><input type="text" name="denySubmit" id="denySubmit" value="" alt="" />Please leave this field empty</span>
+			<input type="submit" class="newsletterbutton" value="GO" name="ACTION_SUBMIT_SURVEY_RESPONSE"/>                
+		</form>
+<!--
+<form method="post" action="https://app.icontact.com/icp/signup.php" name="icpsignup" id="icpsignup1000" accept-charset="UTF-8" onsubmit="return verifyRequired1000();" >
+<input type="hidden" name="redirect" value="http://mohhaiti.org/newsletter_thank_you">
+<input type="hidden" name="errorredirect" value="http://www.icontact.com/www/signup/error.html">
+
+        <input onfocus="this.value=''" type="text" name="fields_email" class="newsletterinput" value="enter email address">
+    <input type="hidden" name="listid" value="20080">
+    <input type="hidden" name="specialid:20080" value="9HZA">
+
+    <input type="hidden" name="clientid" value="791417">
+    <input type="hidden" name="formid" value="1000">
+    <input type="hidden" name="reallistid" value="1">
+    <input type="hidden" name="doubleopt" value="0">
+<input type="submit" class="newsletterbutton" name="Submit" value="GO">
+</form>
+-->
+<script type="text/javascript">
+
+var icpForm1000 = document.getElementById('icpsignup1000');
+
+if (document.location.protocol === "https:")
+
+	icpForm1000.action = "https://app.icontact.com/icp/signup.php";
+function verifyRequired1000() {
+  if (icpForm1000["fields_email"].value == "") {
+    icpForm1000["fields_email"].focus();
+    alert("The Email field is required.");
+    return false;
+  }
+
+
+return true;
+}
+</script>
+</div>
+	</div>
+	<div class="superFooterCol">
+		<h5>Learn More About Us</h5>
+		<ul>
+			<li><a href="/vision_mission_resolution">Vision, Mission & Resolutions &raquo;</a></li>
+			<li><a href="/faq">FAQs &raquo;</a></li>
+			<li><a href="/privacy">Privacy Policy &raquo;</a></li>
+			<li><a href="/press">Media Inquiries &raquo;</a></li>
+			<li><a href="/sitemap">Sitemap &raquo;</a></li>
+		</ul>
+	</div>
+	<div class="superFooterColLast">
+		<h5>Get Involved</h5>
+		<ul>
+			<li><a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Donate &raquo;</a></li>
+			<li><a href="/child-sponsorship">Child Sponsorship &raquo;</a></li>
+			<li><a href="/mission_trips">Mission Trips &raquo;</a></li>
+			<li><a href="/church_advancement">Churches &raquo;</a></li>
+			<li><a href="https://secure3.convio.net/mohh/site/Donation2?df_id=1540&FR_ID=1070&PROXY_ID=1070&1540.donation=form1">Missionary Support</a></li>
+		</ul>
+		
+	</div>
+	<p class="clearfix" style="padding-top:40px; width:70%;">&copy;<%= Date.today.year %> Mission of Hope Haiti // <% if current_user %>
+    			<a href="/admin">Admin</a> // <%= link_to "Logout", destroy_user_session_path %>
+			<% elsif current_user%>
+    			<%= link_to "Logout", destroy_user_session_path %>
+  			<% else %>
+  					<%= link_to "MY MOH Login", new_user_session_path %>
+   			<% end %> <br /><br />
+   			Mission of Hope, Haiti is a 501c3.</p>
+   			<img class="alignRight" style="margin-top:-60px;" src="/assets/ECFA_Member-Seal3.png" />
+</div>
+</div>
+</div>
+<div id="footer">
+	<div id="footerImg"><!--x--></div>
+</div>
+<script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function() {
+	$("a").click(function() { 
+		if($(this).attr("href").indexOf("denari") > -1) { 
+			window.location="/denari";
+			return false; 
+		}
+	});
+});
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,80 @@
+<div style="padding: 20px 0;">
+<div class="row mymoh-wrapper">
+<div class="col-md-12 col-xs-12">
+<h1>MYMOH</h1>
+</div>
+<div class="clearfix"></div>
+<div class="loginWrapper">
+<div class="col-md-7 col-xs-12 mymoh-left">
+<div class="mymoh-info">
+<h2>Update Your Account Information</h2>
+            <p>
+              Change your address, email, password, and personal information.
+            </p>
+    
+            <h2>Manage Your Giving</h2>
+            <p>
+              Give a gift, see your gift history and see your monthly statements.
+            </p>
+    
+            <h2>See Your Child Sponsorships</h2>
+            <p>
+              See details for any children you sponsor, write to them online or give them a gift!
+            </p>
+            <h2>Prepare for a Mission Trip</h2>
+            <p>If you're taking a mission trip, you can get access to critical information that will help ensure you're well-prepared!</p>
+            <h2><a href="http://mohh.convio.net/site/TR/Events/General?pg=tgreeting&fr_id=1070">Set Up a Fundraising Champion Page</a></h2>
+            <p>Are you passionate about a specific program at Mission of Hope? Share that passion with others and help to recruit new partners by creating your own Fundraising Champion Page!</p>
+            <h2>Subscribe to Project &amp; Village Updates</h2>
+            <p>Stay in the loop on what's happening with a specific project or village by subscribing to receive updates in your Update Feed.</p>
+  </div>
+  </div>
+<div class="mymoh-right">
+<div class="col-md-5 col-xs-12">
+<h2>Sign In</h2>
+</div>
+<div class="col-md-5 col-xs-12">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div>
+      <div class="form-group">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, :class => "mymoh-form-field"%>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div>
+  <div class="form-group">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off", :class => "mymoh-form-field" %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <% if devise_mapping.rememberable? -%>
+    <div>
+    <div class="form-group">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me%>
+    </div>
+  </div>
+  <% end -%>
+  <div class="clearfix"></div>
+    <div>
+    <%= f.submit "Log In", :class => "buttonSquareOrange", :style => "border:none;" %>
+  </div>
+  <div class="clearfix"></div>
+  <div>
+  <%= render "users/shared/links" %>
+  </div>
+  <div class="clearfix"></div>
+  <div>
+  <p class="loginDisclaimer">
+          We are excited to announce that we have recently transitioned to a new online donor support system that will allow you to manage your giving in new and easy ways! If you created an account online with us before 6/10/13, your login information is no longer valid and you will need to click the green button to create a new account. Once you have created a new online account, you will be able to access your giving history, give a gift, manage account information and more. If you have any questions about this, please contact our stateside office at 512-256-0835 or email <a href="mailto:info@mohhaiti.org">info@mohhaiti.org</a>. 
+        </p>
+  </div>
+  <div class="clearfix"></div>
+</div>
+<% end %>
+</div>
+</div>
+</div>
+</div>

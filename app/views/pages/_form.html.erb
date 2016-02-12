@@ -1,0 +1,49 @@
+<script type="text/javascript" src="/assets/tinymce/jscripts/tiny_mce/tiny_mce.js" ></script >
+<script type="text/javascript" >
+tinyMCE.init({
+        mode : "textareas",
+        width: "100%",
+        theme : "advanced",
+        plugins : "emotions,spellchecker,advhr,insertdatetime,preview", 
+                
+        // Theme options - button# indicated the row# only
+        theme_advanced_buttons1 : "newdocument,|,bold,italic,underline,|,justifyleft,justifycenter,justifyright,fontselect,fontsizeselect,formatselect",
+        theme_advanced_buttons2 : "cut,copy,paste,|,bullist,numlist,|,outdent,indent,|,undo,redo,|,link,unlink,anchor,image,|,code,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3 : "insertdate,inserttime,|,spellchecker,advhr,,removeformat,|,sub,sup,|,charmap,emotions",      
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        theme_advanced_resizing : true
+});
+</script >
+<%= form_for(@page, :url=> '/pages/' + @page.id.to_s()) do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <h2><%= f.label :url %></h2>
+    <%= f.text_field :url %><br />
+    <h2>Hero Image Filename (can be blank)</h2>
+    <%= f.text_field :heroimage %><br />
+    <h2>Description (meta)</h2>
+    <%= f.text_field :description %><br />  
+    <h2>Title (meta)</h2>
+    <%= f.text_field :title %><br />  
+    <h2><%= f.label :content %></h2>
+    <%= f.text_area :content %><br />
+    <h2><%= f.label :headline %></h2>
+    <%= f.text_field :headline %><br />
+  </div>
+
+  <div class="actions">
+    <%= f.submit :class => "buttonSquareOrange" %>
+  </div>
+<% end %>

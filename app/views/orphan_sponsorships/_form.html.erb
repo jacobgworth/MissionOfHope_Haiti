@@ -1,0 +1,41 @@
+<%= form_for(@orphan_sponsorship) do |f| %>
+  <% if @orphan_sponsorship.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@orphan_sponsorship.errors.count, "error") %> prohibited this orphan_sponsorship from being saved:</h2>
+
+      <ul>
+      <% @orphan_sponsorship.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :age %><br>
+    <%= f.number_field :age %>
+  </div>
+  <div class="field">
+    <%= f.label :sponsorship_number %><br>
+    <%= f.number_field :sponsorship_number %>
+  </div>
+  <div class="field">
+    <%= f.label :bio %><br>
+    <%= f.text_field :bio %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.text_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :slug %><br>
+    <%= f.text_field :slug %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

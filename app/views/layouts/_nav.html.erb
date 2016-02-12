@@ -1,0 +1,273 @@
+<style>
+.blog a:link,
+.blog a:visited {
+	background: url(/assets/pullTag.png) no-repeat;
+    color: #E4D4B9;
+    background-size: contain;
+    font-size: 1em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: none;
+    text-shadow: 0 .05em #000;
+    width: 80px;
+    height: 52px;
+    float: left;
+    position: absolute;
+    top: -20px;
+    right: 82px;
+    padding-top: 20px;
+}
+.blog a:hover{background:url(/assets/pullTag-hover.png) no-repeat; background-size: contain; color:#E4D4B9;text-shadow:0 -.05em #000}
+</style>
+<div id="navBar">
+	<div id="logo">
+		<a href="/"><img src="/assets/logo.png"></a>
+	</div>
+	<div id="utilityBar">
+		<div style="position:absolute; left:-259px; top:-15px;"><a href="http://mohhaiti.myshopify.com" target="_blank"><img src="/assets/Market of Hope Button.png" style="
+width: 166px;"></a></div>
+		<div style="left:-53px;" class="buttonRounded donate"><a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Donate Today</a></div>
+		<ul id="utilityNav" style="margin-left:124px;">
+			<li>
+				<a href="/contact_us">Contact Us</a> //
+				<% if current_user %>
+				<%= link_to "Log out", destroy_user_session_path, :method => :delete %>
+				<% else %>
+				<a href="/mymoh/login">Log In or Sign Up</a>
+				<% end %>
+
+		</ul>
+		<div class="blog">
+			<a href="/blog">Blog</a>
+		</div>
+		<div class="myMOH">
+			<a href="/mymoh/">My MOH</a>
+		</div>
+	</div>
+	<div id="mainNav">
+		<ul id="nav">
+			<li class="active">
+				<a href="/what-we-do">What
+				<br />
+				We Do</a>
+				<ul>
+					<li>
+						<a href="/projects">Projects</a>
+					</li>
+					<li>
+						<a href="/church_advancement">Church Advancement</a>
+					</li>
+					<li>
+						<a href="/orphan_care">Orphan Care</a>
+					</li>
+					<li>
+						<a href="/education">Education</a>
+					</li>
+					<li>
+						<a href="/health_care">Health Care</a>
+					</li>
+					<li>
+						<a href="/haiti_one">HaitiOne</a>
+					</li>
+					<li>
+						<a href="/nutrition">Nutrition</a>
+					</li>
+					<li>
+						<a href="/three_cords">3 Cords</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/church_advancement">Church
+				<br />
+				Advancement</a>
+				<ul>
+					<li>
+						<a href="/villages">Villages We Serve</a>
+					</li>
+					<li>
+						<a href="/church_partner">Become a Church Partner</a>
+					</li>
+					<li>
+						<a href="/vision_trip">Take a Vision Trip</a>
+					</li>
+					
+				</ul>
+			</li>
+			<li>
+				<a href="/child-sponsorship"><br>Sponsorship</a>
+				<ul>
+					<li>
+						<a href="/learn_sponsor">Learn About Sponsorship</a>
+					</li>
+					<li>
+						<a href="/sponsor_faq">Sponsorship FAQs</a>
+					</li>
+					<!--<li><a href="http://mohh.convio.net/site/Ecommerce?store_id=1221">Gift Store</a></li>-->
+					<li>
+						<a href="/mymoh/sponsorships">My Sponsorships</a>
+					</li>
+					<li>
+						<a href="http://mohhaiti.force.com/sponsorship">Sponsor a Student</a>
+					</li>
+					<li>
+						<a href="/orphan_sponsorships">Sponsor an Orphan</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/mission_trips">Mission
+				<br />
+				Trips</a>
+				<ul style="width: 320px;">
+					<li>
+						<a href="/mission_trips">Come on a Mission Trip</a>
+					</li>
+					<li>
+						<a href="/request_info">Request Information</a>
+					</li>
+					<li>
+						<a href="/request_info_medical">Request Info Medical Missions</a>
+					</li>
+					<li>
+						<a href="/medical_mission_trips">Medical Mission Trips</a>
+					</li>
+					<li>
+						<a href="/trip_dates">Trip Dates</a>
+					</li>
+					<li>
+						<a href="/trip_costs">Trip Costs</a>
+					</li>
+					<li>
+						<a href="/trip_faqs">Trip FAQs</a>
+					</li>
+					<li>
+						<a href="/preparing_for_mission_trips">Preparing for a Trip</a>
+					</li>
+					<li>
+						<a href="/experiences">Mission Trip Experiences</a>
+					</li>
+					<li>
+						<a href="https://secure3.convio.net/mohh/site/Donation2?df_id=1561&1561.donation=form1">Pay for a Mission Trip</a>
+					</li>
+					<li>
+						<a href="/caprojects">Village Church Advancement Projects</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/take-action">Take
+				<br />
+				Action</a>
+				<ul>
+					<li>
+						<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Make a Donation</a>
+					</li>
+					<li>
+						<a href="http://mohh.convio.net/site/TR/Events/General?fr_id=1120&pg=pfind">Search for a HopeRaiser</a>
+					</li>
+					<li>
+						<a href="/partner_of_hope">Be a Partner of Hope</a>
+					</li>
+					<li>
+						<a href="/volunteer">Volunteer</a>
+					</li>
+					<li>
+						<a href="/meal_packing">Pack Meals</a>
+					<li>
+						<a href="/share_photos">Share Your Photos</a>
+					</li>
+					<li>
+						<a href="/events">Events</a>
+					</li>
+					<!-- <li><a href="/downloads">Downloads</a></li> -->
+					<li>
+						<a href="/internships">Internships</a>
+					</li>
+				</ul>
+			</li>
+			<li>
+				<a href="/stay-connected">Stay
+				<br />
+				Connected</a>
+				<ul>
+					<li>
+						<a href="/blog">Blog</a>
+					</li>
+					<li>
+						<a href="/updates">Updates</a>
+					</li>
+					<li>
+						<a href="/videos">Videos</a>
+					</li>
+				</ul>
+			</li>
+			<li class="last">
+				<a href="/about_us">About
+				<br />
+				MOH Haiti</a>
+				<ul>
+					<li>
+						<a href="/vision_mission_resolution">Vision, Mission &amp; Resolutions</a>
+					</li>
+					<li>
+						<a href="/Vision_2015.pdf" target="_blank">Vision 2015</a>
+					</li>
+					<li>
+						<a href="/our_story">Our Story &amp; Beliefs</a>
+					</li>
+					<li><a href="/financial_info">Financial Information</a></li>
+					<li>
+						<a href="/about_haiti">About Haiti</a>
+					</li>
+					<li>
+						<a href="/faq">FAQs</a>
+					</li>
+					<li>
+						<a href="/meet_our_staff">Meet Our Staff</a>
+					</li>
+					<li>
+						<a href="/press">Press</a>
+					</li>
+					<li>
+						<a href="/contact_us">Contact Us</a>
+					</li>
+					
+				</ul>
+			</li>
+		</ul>
+		
+	</div>
+	<div id="pullmeinfo">
+		<h1>Help us provide life transformation to every man, woman and child in Haiti!</h1>
+		<div class="buttonSquareOrange" style="width: 80px;margin: 0 auto;margin-top: 16px;">
+			<a href="http://mohh.convio.net/site/Donation2?df_id=1600&1600.donation=form1">Donate</a>
+		</div>
+	</div>
+	<div id="pull" class="">
+		<a href="#" class="pullme">Click me</a>
+	</div>
+</div>
+
+<!-- script to animate pullme tab -->
+<script>
+	window.onOff = 0;
+	$(".pullme").click(function() {
+		//alert("pulled");
+		//$(".pullme").hide();
+		if (window.onOff == 0) {
+			$(".pullme").animate({
+				top : "+=149px",
+			}, 1000);
+			$("#pullmeinfo").slideDown(1000);
+			window.onOff = 1;
+		} else {
+			$(".pullme").animate({
+				top : "-=149px",
+			}, 1000);
+			$("#pullmeinfo").slideUp(1000);
+			window.onOff = 0;
+		}
+	}); 
+</script>
+<!-- end pullme script -->
